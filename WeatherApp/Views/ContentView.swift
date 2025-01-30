@@ -83,7 +83,9 @@ struct SearchView: View {
                 }
             }
             .padding(10)
-            .background(.cyan)
+            .background(
+                LinearGradient(gradient: Gradient(colors: [.cyan, .white, .cyan, .blue]), startPoint: .topLeading, endPoint: .bottomTrailing)
+            )
             .cornerRadius(10)
             .shadow(color: .black, radius: 10, x: 0, y: 10)
         }
@@ -93,7 +95,7 @@ struct SearchView: View {
 struct TempView: View {
     @StateObject var viewModel: ViewModel
     var body: some View {
-        VStack {
+        VStack(spacing: 20) {
             
             Text(viewModel.WeatherData?.name ?? "")
                 .font(.title)
@@ -167,7 +169,6 @@ struct BottomView: View {
                 VStack {
                     
                     HStack {
-                        
                         Image(systemName: "humidity.fill")
                             .renderingMode(.original)
                         

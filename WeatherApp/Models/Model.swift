@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Model: Codable, Identifiable {
+struct Model: Codable {      
     
     let coord: Coord
     let weather: [Weather]

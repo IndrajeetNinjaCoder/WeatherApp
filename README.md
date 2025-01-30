@@ -1,4 +1,4 @@
 # Weather App for iOS
 
+![Weather App](https://github.com/user-attachments/assets/97ee5f7b-6020-471e-b982-6ee2ed751c7c)
 
-![Weather App](https://github.com/user-attachments/assets/4b9c33cc-5011-4eca-90de-03698c1cc791)

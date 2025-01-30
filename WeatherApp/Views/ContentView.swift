@@ -11,6 +11,9 @@ struct ContentView: View {
     
     @StateObject var viewModel = ViewModel()
     @State var city: String = ""
+    
+    @AppStorage("city") var storedCity: String = "Delhi"
+    
     var body: some View {
         ZStack {
             
@@ -43,7 +46,7 @@ struct ContentView: View {
             .foregroundColor(.white)
             .padding()
             .task {
-                await viewModel.getData(city: "Delhi")
+                await viewModel.getData(city: storedCity)
             }
         }
         
@@ -55,8 +58,10 @@ struct ContentView: View {
 struct SearchView: View {
     
     @StateObject var viewModel: ViewModel
-    @Binding var city: String
     
+    @Binding var city: String
+    @AppStorage("city") var storedCity: String = ""
+   
     var body: some View {
         VStack {
             HStack{
@@ -66,6 +71,7 @@ struct SearchView: View {
                 Button {
                     Task {
                         await viewModel.getData(city: city)
+                        storedCity = city
                         city = ""
                     }
                 } label: {
